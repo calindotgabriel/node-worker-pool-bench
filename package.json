@@ -1,0 +1,20 @@
+{
+  "name": "node-worker-pool-bench",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "What moving CPU-bound work into a worker pool actually buys you, measured two ways: throughput, and whether the server still answers.",
+  "engines": {
+    "node": ">=22.7.0"
+  },
+  "scripts": {
+    "bench": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/bench.ts",
+    "bench:quick": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/bench.ts --rows 20000 --runs 1",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.0"
+  }
+}
