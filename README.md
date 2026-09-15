@@ -8,6 +8,11 @@ main thread while it did. Moving it into worker pools brought it to about 12. Th
 technique from that job, isolated, instrumented and reproducible on your own machine — because a
 number in a CV is worth roughly nothing next to a command you can run.
 
+**There is a browser version you can run without cloning anything:**
+[calingabriel.com/lab/worker-pools](https://calingabriel.com/lab/worker-pools). It ports `task.js`
+byte for byte and prints the same fingerprint this benchmark does, so you can check the fast path
+is not quietly doing less work.
+
 ```bash
 npm install
 npm run bench
@@ -127,3 +132,9 @@ npm run typecheck
 ## Licence
 
 MIT.
+
+## Related
+
+[postgres-isolation-lab](https://github.com/calindotgabriel/postgres-isolation-lab) — the same idea
+applied to database transactions: concurrent transfers that lose money, and what each fix costs.
+Its browser half is at [calingabriel.com/lab/transactions](https://calingabriel.com/lab/transactions).
